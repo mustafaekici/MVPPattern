@@ -1,0 +1,44 @@
+﻿MODEL
+VIEW 
+PRESENTER (Dataya erisir ve nasil sunulacagini (UI) ayarlar.)
+------------------
+Temel olarak mantık, windows form gibi kullanıcı arayüzü önemli olan
+birden çok developerın takım halinde geliştirdiği uygulamalarda, 
+bir object oriented prensibi olan MVP pattern kullanılabilir.
+-Uygulamada (Seperation of Concern)
+
+-View dediğimiz şey Kullanıcı arayüzü ile olan herşeydir. (UI) (Frontent)
+Dolayısıyla View uygulamanın mantığını bilmemelidir, bağımlı olmamlıdır.
+Ornek.
+Kullanıcı login ekranı.
+
+*UI 
+-> label = kullanici adi, textbox sifre (2 kontrol)
+-> Bir formun uzerinde (WindowsForm yada Xamarin form yada WPF yada ASP.NET MVC)
+Angular, React ....vs vs vs
+
+Model
+-> class Login
+   {
+		string kullaniciadi
+		string sifre.
+   }
+
+DataBase Tablosu (DataACCESS)
+	->Kullanici tablosu ve sifre KULLANICI
+	->Izinler	?? logic 1 Id li kullanicinin yetkileri?
+
+Uygulama Logic (DomainLogic)
+	->Kullanicinin izni varmi? 
+	gidilir izinler bakilir, deger alinir, daha sonra deger alinir
+	kullanici ile iliskilendirilir vs vs vs logic.
+	Urun indirimdemi degilmi?, bir suru business logic.
+
+NTIER uygulamari. (n katmanlı)
+-DataAccess (Data ile ilgili herşeyi)   SQL Server DAL (Data Access Layer)
+
+-DataServis (business logic)  
+
+
+-UI katmanı   textbox  ReactJS kontroller farkli.
+	
