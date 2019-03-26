@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVPPatternPresenter", "MVPP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccess\DataAccessLayer.csproj", "{8BB8FDC1-F6C4-481A-BC93-DDAD7DD041DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVPPatternPresenter.UnitTests", "MVPPatternPresenter.UnitTests\MVPPatternPresenter.UnitTests.csproj", "{31E03022-4CC0-4D18-A100-E8BCA8271F0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{8BB8FDC1-F6C4-481A-BC93-DDAD7DD041DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BB8FDC1-F6C4-481A-BC93-DDAD7DD041DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BB8FDC1-F6C4-481A-BC93-DDAD7DD041DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31E03022-4CC0-4D18-A100-E8BCA8271F0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31E03022-4CC0-4D18-A100-E8BCA8271F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31E03022-4CC0-4D18-A100-E8BCA8271F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31E03022-4CC0-4D18-A100-E8BCA8271F0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

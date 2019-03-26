@@ -10,6 +10,6 @@ namespace DataAccessLayer
     public interface IDataAccessRepo
     {
         IEnumerable<Product> SelectAll();
-        Product Select(int id);
+        Product Select(int? id);
     }
 }
