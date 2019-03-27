@@ -28,6 +28,7 @@ namespace ProductApplication
             var form = new ProductForm();
 
             var presenter = new ProductPresenter(form, data);
+            
             Application.Run(form);
 
 

@@ -50,9 +50,36 @@ namespace MVPPatternPresenter.UnitTests
         {
             var mock = Substitute.For<IProductFormView>();
             var stub = Substitute.For<IDataAccessRepo>();
+            stub.SelectAll().Returns(dummyProducts);
             ProductPresenter pr = new ProductPresenter(mock, stub);
             mock.OnLoaded += Raise.Event<Action>();
             mock.Received().GetAllProducts(dummyProducts);
+        }
+        [TestMethod]
+        public void Ctor_OnSelected_WillBindToDetail()
+        {
+            var selectedProduct = new Product()
+            {
+                ProductId = 2,
+                ProductName = "y",
+                Price = 110,
+                Stok = 4
+            };
+            var mock = Substitute.For<IProductFormView>();
+            var stub = Substitute.For<IDataAccessRepo>();
+            stub.Select(Arg.Any<int>()).Returns(selectedProduct);
+            var presenter = new ProductPresenter(mock, stub);
+           
+            mock.OnSelected += Raise.Event<Action<Product>>(selectedProduct);
+            mock.Received().BindToDetail(selectedProduct);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException), "Ürün Seçilmedi!")]
+        public void ViewOnSelected_ArgumentNull_WillThrow()
+        {
+            var presenter = new ProductPresenter();
+            presenter._view_OnSelected(null);
         }
     }
 }

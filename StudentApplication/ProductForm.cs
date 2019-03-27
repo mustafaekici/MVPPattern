@@ -25,7 +25,14 @@ namespace ProductApplication
         {
             if (this.OnSelected != null)
             {
-                OnSelected((Product)listBox1.SelectedItem);
+                try
+                {
+                    OnSelected((Product)listBox1.SelectedItem);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

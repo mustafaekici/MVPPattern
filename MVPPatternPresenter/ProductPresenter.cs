@@ -20,8 +20,17 @@ namespace MVPPatternPresenter
             _view.OnLoaded += _view_OnLoaded;
             _view.OnSelected += _view_OnSelected;
         }
-        private void _view_OnSelected(Product product)
+
+        #if DEBUG
+        public ProductPresenter() //test amacli ctor
         {
+
+        }
+        #endif
+        public void _view_OnSelected(Product product)
+        {
+            if (product == null)
+                throw new ArgumentNullException("Ürün Seçilmedi!");
             var gelen= _repo.Select(product.ProductId);
             _view.BindToDetail(gelen);
         }
