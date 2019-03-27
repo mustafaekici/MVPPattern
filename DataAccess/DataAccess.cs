@@ -1,4 +1,5 @@
-﻿using MVPPatternModels;
+﻿using Helper;
+using MVPPatternModels;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -14,13 +15,24 @@ namespace DataAccessLayer
         string connectionString = string.Empty;
    
         public DataAccess(string connectionstring)
-        {
+        {      
             //TODO:
             //ConnectionString parameterden gelmeseydi yani aşağıdaki gibi olsaydı nasıl test ederdik?
             //connectionstring= ConfigurationManager.ConnectionStrings["baglanti"].ConnectionString;
+       
             if (string.IsNullOrEmpty(connectionstring))
                 throw new ArgumentNullException("ArgumentNullException");
             connectionString = connectionstring;
+        }
+
+        public DataAccess(IConfigurationManager confman)
+        {
+            string conf = confman.GetAppConfigConnectionString();
+
+            if (string.IsNullOrEmpty(conf))
+                throw new ArgumentNullException("ArgumentNullException");
+
+            connectionString = conf;
         }
         public Product Select(int? id)
         {
