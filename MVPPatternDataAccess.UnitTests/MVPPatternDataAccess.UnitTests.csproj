@@ -60,6 +60,10 @@
       <Project>{8bb8fdc1-f6c4-481a-bc93-ddad7dd041df}</Project>
       <Name>DataAccessLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Models\MVPPatternModels.csproj">
+      <Project>{23ef2912-a8a7-4262-894e-3872865424df}</Project>
+      <Name>MVPPatternModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

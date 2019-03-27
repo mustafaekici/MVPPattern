@@ -12,15 +12,21 @@ namespace DataAccessLayer
     public class DataAccess : IDataAccessRepo
     {
         string connectionString = string.Empty;
-
-        public DataAccess()
+   
+        public DataAccess(string connectionstring)
         {
-            connectionString = ConfigurationManager.ConnectionStrings["baglanti"].ConnectionString;
+            //TODO:
+            //ConnectionString parameterden gelmeseydi yani aşağıdaki gibi olsaydı nasıl test ederdik?
+            //connectionstring= ConfigurationManager.ConnectionStrings["baglanti"].ConnectionString;
+            if (string.IsNullOrEmpty(connectionstring))
+                throw new ArgumentNullException("ArgumentNullException");
+            connectionString = connectionstring;
         }
-
         public Product Select(int? id)
         {
-  
+            if (id == null)
+                throw new ArgumentNullException();
+
             Product product = null;
             using (var connection = new SqlConnection(connectionString))
             {

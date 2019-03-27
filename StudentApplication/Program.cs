@@ -2,6 +2,7 @@
 using MVPPatternPresenter;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,9 +23,9 @@ namespace ProductApplication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-          
 
-            var data = new DataAccess();
+          string conf=  ConfigurationManager.ConnectionStrings["baglanti"].ConnectionString;
+            var data = new DataAccess(conf);
             var form = new ProductForm();
 
             var presenter = new ProductPresenter(form, data);
