@@ -31,6 +31,7 @@ namespace MVPPatternPresenter
         {
             if (product == null)
                 throw new ArgumentNullException("Ürün Seçilmedi!");
+           
             var gelen= _repo.Select(product.ProductId);
             _view.BindToDetail(gelen);
         }
